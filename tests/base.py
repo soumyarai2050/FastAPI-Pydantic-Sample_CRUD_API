@@ -11,7 +11,8 @@ from wait4it import wait_for, get_free_port
 
 # # Project # #
 from people_api import run
-from people_api.database import collection
+#from people_api.database import collection
+from people_api.repositories import collection
 from people_api.settings import api_settings
 
 __all__ = ("BaseTest",)
