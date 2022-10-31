@@ -76,6 +76,11 @@ class collection:
                 ret_val.inserted_id = p_id
         return ret_val
 
+    @classmethod
+    def delete_many(cls, id_dict: Dict):
+        cls.persons.clear()
+        return
+
 
 class PeopleRepository:
     @staticmethod

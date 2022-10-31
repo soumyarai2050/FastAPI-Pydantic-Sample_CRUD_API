@@ -5,7 +5,7 @@ Settings loaders using Pydantic BaseSettings classes (load from environment vari
 # # Installed # #
 import pydantic
 
-__all__ = ("api_settings", "mongo_settings")
+__all__ = ("api_settings",)
 
 
 class BaseSettings(pydantic.BaseSettings):
@@ -15,7 +15,7 @@ class BaseSettings(pydantic.BaseSettings):
 
 class APISettings(BaseSettings):
     title: str = "People API"
-    host: str = "0.0.0.0"
+    host: str = "127.0.0.1"
     port: int = 5000
     log_level: str = "INFO"
 
@@ -33,4 +33,4 @@ class MongoSettings(BaseSettings):
 
 
 api_settings = APISettings()
-mongo_settings = MongoSettings()
+# mongo_settings = MongoSettings()

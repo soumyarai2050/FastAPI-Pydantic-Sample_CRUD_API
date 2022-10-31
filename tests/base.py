@@ -26,7 +26,8 @@ class BaseTest:
     def setup_class(cls):
         # Startup the API on a process before all tests
         # NOTE process can make mocking more difficult
-        api_port = api_settings.port = get_free_port()
+        # api_port = api_settings.port = get_free_port()
+        api_port = api_settings.port = 5000
         cls.api_url = f"http://localhost:{api_port}"
         cls.api_process = Process(target=run, daemon=True)
         cls.api_process.start()
