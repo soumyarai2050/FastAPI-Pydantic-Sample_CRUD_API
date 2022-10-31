@@ -56,7 +56,7 @@ class collection:
         ret_val: OurResult = OurResult()
         if "_id" in id_dict:
             p_id = id_dict["_id"]
-            if p_id not in cls.persons:
+            if p_id in cls.persons:
                 if "$set" in field_dict:
                     cls.persons[p_id].update(field_dict["$set"])
                     ret_val.acknowledged = True
@@ -69,7 +69,7 @@ class collection:
         ret_val: OurResult = OurResult()
         if "_id" in id_dict:
             p_id = id_dict["_id"]
-            if p_id not in cls.persons:
+            if p_id in cls.persons:
                 del cls.persons[p_id]
                 ret_val.acknowledged = True
                 ret_val.deleted_count = 1  # not actual count - but makes it work
